@@ -1,0 +1,580 @@
+/*intro to body*/
+@keyframes backbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes beginbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes pitchbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes measuresbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes meterbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes rhythmbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes tempobuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes voicingsbuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes tonebuttonappear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+/*body to intro*/
+@keyframes backbuttonvanish {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes beginbuttonvanish {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes pitchbuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes measuresbuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes meterbuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes rhythmbuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes tempobuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes voicingsbuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes tonebuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+/*---------------------------------------------classes----------------------------------------------------*/
+
+/*backbutton*/
+.backbutton {
+    background-color: white;
+    border-radius: 20%;
+    display: none;
+}
+.backbuttoncome {
+    background-color: white;
+    border-radius: 20%;
+    display: inline-block;
+    animation-name: backbuttonappear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.backbuttongoaway {
+    background-color: white;
+    border-radius: 20%;
+    display: inline-block;
+    animation-name: backbuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.backbutton  :hover {
+    border-radius: 50%;
+}
+/*begin button*/
+.beginbutton {
+    background-color: white;
+    border-radius: 20%;
+    display: none;
+}
+.infodiv {
+    height: 50vh;
+    width: 60vh;
+    border-radius: 25%;
+    position: absolute;
+    left: 50%;
+    top: 35%; 
+    transform: translateX(-50%)
+    translateY(-25%);
+    background-color:firebrick;
+    text-align: center;
+}
+/*pitch button*/
+.pitchbutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: pitchbuttonappear;
+    animation-fill-mode: forwards;  
+    animation-duration: 4s;  
+}
+.pitchbuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: pitchbuttonvanish;
+    animation-fill-mode: forwards;  
+    animation-duration: 2s;
+}
+.pitchbutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: pitchbuttonappear2;
+    animation-fill-mode: forwards;  
+    animation-duration: 2s;
+}
+.pitchbuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: pitchbuttonvanish2;
+    animation-fill-mode: forwards;  
+    animation-duration: 2s;
+}
+.pitchbuttonhid {
+    display: none;
+}
+.rhythmbutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translateX(-50%);
+    animation-name: rhythmbuttonappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.rhythmbuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translateX(-50%);
+    animation-name: rhythmbuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.rhythmbutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translateX(-50%);
+    animation-name: rhythmbuttonappear2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.rhythmbuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translateX(-50%);
+    animation-name: rhythmbuttonvanish2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.tempobutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: tempobuttonappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.tempobuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: tempobuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.tempobutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: tempobuttonappear2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.tempobuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: tempobuttonvanish2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.meterbutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: meterbuttonappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.meterbuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: meterbuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.meterbutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: meterbuttonappear2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.meterbuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: meterbuttonvanish2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.measuresbutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    animation-name: measuresbuttonappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.measuresbuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    animation-name: measuresbuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.measuresbutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    animation-name: measuresbuttonappear2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.measuresbuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    animation-name: measuresbuttonvanish2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.tonebutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: tonebuttonappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.tonebuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: tonebuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.tonebutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: tonebuttonappear2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.tonebuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translateX(-50%);
+    animation-name: tonebuttonvanish2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.voicingsbutton {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 90%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: voicingsbuttonappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.voicingsbuttonhidden {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 90%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: voicingsbuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.voicingsbutton2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 90%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: voicingsbuttonappear2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+.voicingsbuttonhidden2 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 90%;
+    top: 40%;
+    transform: translateX(-50%);
+    animation-name: voicingsbuttonvanish2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.button8 {
+    height: 7%;
+    width: 7%;
+    border-radius: 40%;
+    position: absolute;
+    left: 70%;
+    top: 20%;
+    transform: translateX(-50%)
+}

@@ -1,0 +1,949 @@
+//-----------------------variables and mixins
+@mixin intro_heading {
+    text-align: center;
+    text-shadow: 
+    0 0 8px white,
+    0 0 12px white,
+    0 0 20px #F7EF99,
+    0 0 26px #0fa,
+    0 0 34px #1B998B;
+    color: white;
+}
+@mixin intro_note {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    fill: #91F5AD;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    transition: .5s;
+}
+@mixin intro_note_hover {
+    fill: white;
+    filter: drop-shadow( 10px 10px 45px #dee29f);
+}
+
+
+
+
+//animations
+    //onload
+@keyframes onload_note {
+    0% {
+        transform: translate(-20rem) scale(3) rotate(390deg);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes notebuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+        fill: white;
+        filter: drop-shadow( 10px 10px 45px #dee29f);
+    }
+    100% {
+        transform: translate(30rem) scale(.2) rotate(270deg);
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes appear_right {
+    0% {
+        transform: translate(30rem,10rem) rotate(22deg) scale(.1);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes appear_left {
+    0% {
+        transform: translate(-30rem,10rem) rotate(-22deg) scale(.1);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes delay_appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes delay_appear_topright {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translate(30rem,-10rem) rotate(22deg) scale(.1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes delay_appear_right {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translate(30rem,10rem) rotate(22deg) scale(.1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes delay_appear_topleft {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translate(-30rem,-10rem) rotate(-22deg) scale(.1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes delay_appear_left {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translate(-30rem,10rem) rotate(-22deg) scale(.1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes vanish {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+@keyframes vanish_right{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(30rem,10rem) rotate(22deg) scale(.1);
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+@keyframes vanish_left{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-30rem,10rem) rotate(-22deg) scale(.1);
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+@keyframes vanish_topright{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(30rem,-10rem) rotate(22deg) scale(.1);
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+@keyframes vanish_topleft{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-30rem,-10rem) rotate(-22deg) scale(.1);
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+//--------------------------------------------------styles
+.answer {
+    color: white;
+    position: absolute;
+    top: 50%;
+    animation-name: delay_appear;
+    animation-duration: 4s;
+}
+.dis_men {
+    color: white;
+}
+
+
+.menubuttons {
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;   
+}
+//replaybutton
+.showanswer_B-E{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+    animation-name: delay_appear;
+    animation-duration: 4s;
+    position: absolute;
+    left: 75%;
+    transform: translateX(-50%);
+}
+    .showanswer_B-E:hover{filter: drop-shadow( 5px 5px 10px #3082df);
+        transition: .5s;}
+
+.showanswer_E-B{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+    animation-name: vanish;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    left: 75%;
+    transform: translateX(-50%);
+}
+//backbutton2
+.backbutton2_B-E{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+    animation-name: delay_appear;
+    animation-duration: 4s;
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
+}
+    .backbutton2_B-E:hover{filter: drop-shadow( 5px 5px 10px #3082df);
+        transition: .5s;}
+
+.backbutton2_E-B{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+    animation-name: vanish;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
+}
+//play button
+.play_B-E{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    width: 4rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+    animation-name: delay_appear;
+    animation-duration: 4s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+    .play_B-E:hover{filter: drop-shadow( 5px 5px 10px #3082df);
+        transition: .5s;}
+
+.play_E-B{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: blue;
+    height: 3rem;
+    width: 4rem;
+    margin: 10px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+    animation-name: vanish;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@media  all and (max-width: 750px){
+    .menubuttons{
+        font-size: 8px;
+        height: 2rem;
+        margin: 5px;
+        padding: 3px;
+    }
+
+    .showanswer_B-E{
+        font-size: 8px; 
+        border-width: 2px; 
+        height: 2rem;
+        margin: 7px;
+        padding: 4px;
+    }
+    .showanswer_E-B{  
+        font-size: 8px; 
+        border-width: 2px; 
+        height: 2rem;
+        margin: 7px;
+        padding: 4px;
+    }
+
+    .play_B-E{
+        font-size: 8px; 
+        border-width: 2px; 
+        height: 2rem;
+        margin: 7px;
+        padding: 4px;
+    }
+    .play_E-B{
+        font-size: 8px; 
+        border-width: 2px; 
+        height: 2rem;
+        margin: 7px;
+        padding: 4px;
+    }
+
+    .backbutton2_B-E{
+        font-size: 8px; 
+        border-width: 2px; 
+        height: 2rem;
+        margin: 7px;
+        padding: 4px;
+    }
+        
+    
+    .backbutton2_E-B{
+        font-size: 8px; 
+        border-width: 2px; 
+        height: 2rem;
+        margin: 7px;
+        padding: 4px;
+    }
+
+}
+
+.menubuttons:hover {
+    filter: drop-shadow( 5px 5px 10px #3082df);
+    transition: .5s;
+}
+.infodiv_coming {
+    height: 50vh;
+    width: 60vh;
+    border-radius: 25%;
+    position: absolute;
+    left: 50%;
+    top: 35%; 
+    transform: translateX(-50%)
+    translateY(-25%);
+    background-color:black;
+    text-align: center;
+    animation-name: delay_appear;
+    animation-duration: 10s;
+}
+.infodiv_going {
+    height: 50vh;
+    width: 60vh;
+    border-radius: 25%;
+    position: absolute;
+    display: inline;
+    left: 50%;
+    top: 35%; 
+    transform: translateX(-50%)
+    translateY(-25%);
+    background-color:black;
+    text-align: center;
+    animation-name: vanish;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.fullscreen {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: auto;
+    background-color: black;
+}
+.hidden {
+    display: none
+}
+//heading
+.heading_onload {
+    @include intro_heading;
+    animation-name: appear_right;
+    animation-duration: 2s;
+}
+.heading_I-B{
+    @include intro_heading;
+    animation-name: vanish_left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.heading_B-I {
+    @include intro_heading;
+    animation-name: delay_appear_right;
+    animation-duration: 2s;
+}
+//first note
+.AlphaNote_onload {
+    @include intro_note;
+    animation-name: onload_note;
+    animation-duration: 2s;
+}
+.AlphaNote_onload:hover {
+    @include intro_note_hover
+}
+.AlphaNote_B-I {
+    @include intro_note;
+    animation-name: delay_appear;
+    animation-fill-mode: forwards;
+    animation-duration: 4s;
+}
+.AlphaNote_B-I:hover {
+    @include intro_note_hover
+}
+.AlphaNote_I-B{
+    @include intro_note;
+    animation-name: notebuttonvanish;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+//body_backbutton
+@mixin backbutton_styling {
+    fill: #91F5AD;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    left: 2%;
+    top: 10%;
+    transition: .5s;
+}
+@mixin backbutton_hover_styling {
+    fill: white;
+    filter: drop-shadow(10px 10px 45px #1B998B);
+}
+.backbutton_I-B{
+    @include backbutton_styling;
+    animation-name: delay_appear;
+    animation-duration: 7s;
+}
+    .backbutton_I-B:hover{@include backbutton_hover_styling}
+.backbutton_B-E{
+    @include backbutton_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.backbutton_E-B{
+    @include backbutton_styling;
+    animation-name: delay_appear_right;
+    animation-duration: 7s;
+}
+    .backbutton_E-B:hover{@include backbutton_hover_styling}
+.backbutton_B-I{
+    @include backbutton_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+//commencebutton
+@mixin commencebutton_styling {  
+    fill: #91F5AD;
+    filter: drop-shadow( 0 0 15px white);
+    height: 12%;
+    width: 12%;
+    position: absolute;
+    left: 80%;
+    top: 80%;
+    transition: .5s;
+}
+@mixin commencebutton_hover_styling {
+    fill: white;
+    filter: drop-shadow(10px 10px 45px #1B998B);
+}
+.commencebutton_I-B{
+    @include commencebutton_styling;
+    animation-name: delay_appear;
+    animation-duration: 7s;
+}
+    .commencebutton_I-B:hover{@include commencebutton_hover_styling}
+
+.commencebutton_B-E{
+    @include commencebutton_styling;
+    animation-name: vanish_topleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.commencebutton_E-B{
+    @include commencebutton_styling;
+    animation-name: delay_appear_topleft;
+    animation-duration: 7s;
+}
+    .commencebutton_E-B:hover{@include commencebutton_hover_styling}
+
+.commencebutton_B-I{
+    @include commencebutton_styling;
+    animation-name: vanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+//pitch
+@mixin pitch_styling {
+    height: 10%;
+    width: 10%;
+    fill: #4AAD52;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+@mixin pitch_hover_styling{
+    fill: white;
+    filter: drop-shadow( 10px 10px 45px white);
+}
+.pitch_I-B{
+    @include pitch_styling;
+    animation-name: delay_appear_right;
+    animation-duration: 4s;
+}
+    .pitch_I-B:hover{
+        @include pitch_hover_styling
+    }
+.pitch_B-E{
+    @include pitch_styling;
+    animation-name: vanish_left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.pitch_E-B{
+    @include pitch_styling;
+    animation-name: delay_appear_left;
+    animation-duration: 4s;
+}
+    .pitch_E-B:hover{
+        @include pitch_hover_styling
+    }
+.pitch_B-I{
+    @include pitch_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+    
+//rhythm
+@mixin rhythm_styling {
+    height: 10%;
+    width: 10%;
+    fill: #1B998B;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.rhythm_I-B{
+    @include rhythm_styling;
+    animation-name: delay_appear_right;
+    animation-duration: 4s;
+}
+    .rhythm_I-B:hover{
+        @include pitch_hover_styling
+    }
+.rhythm_B-E{
+    @include rhythm_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.rhythm_E-B{
+    @include rhythm_styling;
+    animation-name: delay_appear_topright;
+    animation-duration: 4s;
+}
+    .rhythm_E-B:hover{
+        @include pitch_hover_styling
+    }
+.rhythm_B-I{
+    @include rhythm_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+//tempo
+@mixin tempo_styling {
+    height: 10%;
+    width: 10%;
+    fill: #C5E063;
+    filter: drop-shadow( 0 0 15px rgb(158, 204, 52));
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.tempo_I-B{
+    @include tempo_styling;
+    animation-name: delay_appear_topright;
+    animation-duration: 4s;
+}
+    .tempo_I-B:hover{
+        @include pitch_hover_styling;
+    }
+.tempo_B-E{
+    @include tempo_styling;
+    animation-name: vanish_topright;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.tempo_E-B{
+    @include tempo_styling;
+    animation-name: delay_appear_left;
+    animation-duration: 4s;
+}
+    .tempo_E-B:hover{
+        @include pitch_hover_styling;
+    }
+.tempo_B-I{
+    @include tempo_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+//meter
+@mixin meter_styling {
+    height: 10%;
+    width: 10%;
+    fill: #F56476;
+    filter: drop-shadow( 0 0 15px #e765ac);
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.meter_I-B{
+    @include meter_styling;
+    animation-name: delay_appear_topleft;
+    animation-duration: 4s;
+}
+    .meter_I-B:hover{@include pitch_hover_styling;}
+.meter_B-E{
+    @include meter_styling;
+    animation-name: vanish_right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.meter_E-B{
+    @include meter_styling;
+    animation-name: delay_appear_topright;
+    animation-duration: 4s;
+}
+    .meter_E-B:hover{@include pitch_hover_styling;}
+.meter_B-I{
+    @include meter_styling;
+    animation-name: vanish_left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+//measures
+@mixin measures_styling {
+    height: 10%;
+    width: 10%;
+    fill: #B118C8;
+    filter: drop-shadow( 0 0 15px #a741be);
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.measures_I-B{
+    @include measures_styling;
+    animation-name: delay_appear_topright;
+    animation-duration: 4s;
+}
+    .measures_I-B:hover{@include pitch_hover_styling;}
+.measures_B-E{
+    @include measures_styling;
+    animation-name: vanish_topleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.measures_E-B{
+    @include measures_styling;
+    animation-name: delay_appear_topleft;
+    animation-duration: 4s;
+}
+    .measures_E-B:hover{@include pitch_hover_styling;}
+.measures_B-I{
+    @include measures_styling;
+    animation-name: vanish_topleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+//tone
+@mixin tone_styling {
+    height: 10%;
+    width: 10%;
+    fill: #06D6A0;
+    filter: drop-shadow( 0 0 15px #56c5b8);
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.tone_I-B{
+    @include tone_styling;
+    animation-name: delay_appear_topleft;
+    animation-duration: 4s;
+}
+    .tone_I-B:hover{@include pitch_hover_styling;}
+.tone_B-E{
+    @include tone_styling;
+    animation-name: vanish_topleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.tone_E-B{
+    @include tone_styling;
+    animation-name: delay_appear_left;
+    animation-duration: 4s;
+}
+    .tone_E-B:hover{@include pitch_hover_styling;}
+.tone_B-I{
+    @include tone_styling;
+    animation-name: vanish_topleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+//voicings
+@mixin voicings_styling {
+    height: 10%;
+    width: 10%;
+    fill: #26547C;
+    filter: drop-shadow( 0 0 15px #0d3cbd);
+    position: absolute;
+    left: 90%;
+    top: 40%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.voicings_I-B{
+    @include voicings_styling;
+    animation-name: delay_appear_topleft;
+    animation-duration: 4s;
+}
+    .voicings_I-B:hover{@include pitch_hover_styling;}
+.voicings_B-E{
+    @include voicings_styling;
+    animation-name: vanish_left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.voicings_E-B{
+    @include voicings_styling;
+    animation-name: delay_appear_left;
+    animation-duration: 4s;
+}
+    .voicings_E-B:hover{@include pitch_hover_styling;}
+.voicings_B-I{
+    @include voicings_styling;
+    animation-name: vanish_topleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+//answer
+@mixin answer_styling {
+    height: 10%;
+    width: 10%;
+    fill: #BB342F;
+    filter: drop-shadow( 0 0 15px #BB342F);
+    position: absolute;
+    left: 70%;
+    top: 20%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.answer_I-B{
+    @include answer_styling;
+    animation-name: delay_appear_left;
+    animation-duration: 4s;
+}
+    .answer_I-B:hover{@include pitch_hover_styling;}
+.answer_B-E{
+    @include answer_styling;
+    animation-name: vanish_left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.answer_E-B{
+    @include answer_styling;
+    animation-name: delay_appear_left;
+    animation-duration: 4s;
+}
+    .answer_E-B:hover{@include pitch_hover_styling;}
+.answer_B-I{
+    @include answer_styling;
+    animation-name: vanish_left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+
+//stopbutton
+.stop_B-E{
+    animation-name: delay_appear;
+    animation-duration: 4s;
+}
+   // .stop_B-E:hover{}
+.stop_E-B{
+    animation-name: vanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+//create new sounds
+.create_B-E{
+    animation-name: delay_appear;
+    animation-duration: 4s;
+}
+  //  .create_B-E:hover{}
+.create_E-B{
+    animation-name: vanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.grid-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    z-index: 0;
+}
+.grid-container > p {
+    background-color: rgba(134, 28, 28, 0.8);
+    display: grid;
+    padding: 20px 0;
+    font-size: 30px;
+    gap: 10px;
+    grid-template-columns: auto auto auto auto;
+}
+.grid-container > div > div {
+    background-color: rgba(40, 134, 28, 0.8);
+    display: grid;
+    padding: 20px 0;
+    font-size: 30px;
+}

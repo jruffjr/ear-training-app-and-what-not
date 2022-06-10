@@ -1,0 +1,127 @@
+/*intro to body*/
+@keyframes headingvanish{
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes notebuttonvanish{
+    0% {
+        display: block;
+        opacity: 1;
+        fill: white;
+        filter: drop-shadow( 10px 10px 45px #dee29f);
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        fill: #0F8B8D;
+    }
+}
+/*body to intro*/
+@keyframes headingappear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes notebuttonappear{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*heading*/
+.heading {
+    text-align: center;
+    text-shadow: 
+    0 0 8px white,
+    0 0 12px white,
+    0 0 20px #F7EF99,
+    0 0 26px #0fa,
+    0 0 34px #1B998B;
+    color: white;
+    animation-name: onload;
+    animation-duration: 2s;
+}
+.headinghidden {
+    animation-name: headingvanish;
+    animation-duration: 2s;
+    text-align: center;
+    text-shadow: 
+    0 0 8px white,
+    0 0 12px white,
+    0 0 20px #F7EF99,
+    0 0 26px #0fa,
+    0 0 34px #1B998B;
+    color: white;
+    animation-fill-mode: forwards;
+}
+.headingcomeback {
+    animation-name: headingappear;
+    animation-duration: 2s;
+    text-align: center;
+    text-shadow: 
+    0 0 8px white,
+    0 0 12px white,
+    0 0 20px #F7EF99,
+    0 0 26px #0fa,
+    0 0 34px #1B998B;
+    color: white;
+    animation-fill-mode: forwards;
+}
+/*notebutton*/
+.frame_quarter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    fill: #91F5AD;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    animation-name: onload;
+    animation-duration: 2s;
+    transition: .5s;
+}
+.frame_quarterhidden {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    fill: #91F5AD;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    animation-name: notebuttonvanish;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+.frame_quartercomeback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    fill: #91F5AD;
+    filter: drop-shadow( 0 0 15px #1B998B);
+    transition: .5s;
+    animation-name: notebuttonappear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.frame_quarter:hover {
+    fill: white;
+    filter: drop-shadow( 10px 10px 45px #dee29f);
+}
+.frame_quartercomeback:hover {
+    fill: white;
+    filter: drop-shadow( 10px 10px 45px #dee29f);
+}
